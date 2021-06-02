@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+
+  & form {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 25px;
+    width: 90vw;
+    height: 10vh;
+
+    & > div:first-of-type {
+      margin-right: 15px;
+      width: 70%;
+    }
+  }
+  .Polaris-Connected, .Polaris-Connected__Item.Polaris-Connected__Item--primary, .Polaris-TextField, .Polaris-TextField__Input {
+    width: 100%;
+    height: 100%;
+  } 
+}

@@ -16,7 +16,7 @@ const WeatherInfo = ({ weatherData, icon }) => {
         {name}
         <span>, {sys && sys.country}</span>
       </Heading>
-      <DisplayText size="large">{main && main.temp} °C</DisplayText>
+      <DisplayText size="large">{main && Math.round(main.temp)} °C</DisplayText>
       <div className="weather-info__container-image">
         <img src={iconUrl} alt="weather icon"/>
       </div>
