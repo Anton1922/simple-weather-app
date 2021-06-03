@@ -1,13 +1,21 @@
-.Polaris-Card {
+.Polaris-Card:first-of-type {
+  position: relative;
   margin: 0 auto;
-  padding: 50px;
+  padding: 20px;
   width: 90vw;
-  height: 60vh;
+  height: 50vh;
   text-align: center;
+
+  & button {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+  }
 }
 
 h3.Polaris-Heading {
-  font-size: 2.6rem;
+  margin-bottom: 20px;
+  font-size: 3.6rem;
   line-height: 1.15;
 }
 
@@ -17,8 +25,8 @@ h3.Polaris-Heading {
   &__container-image {
     margin: 0 auto;
     width: 90%;
-    min-width: 200px;
-    max-width: 320px;
+    min-width: 180px;
+    max-width: 250px;
 
     & img {
       width: 100%;

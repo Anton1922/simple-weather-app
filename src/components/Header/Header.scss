@@ -1,13 +1,17 @@
 .header {
   display: flex;
+  justify-content: space-between;
+  margin: 25px auto;
+  width: 90vw;
 
   & form {
     display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 25px;
-    width: 90vw;
-    height: 10vh;
+    justify-content: flex-start;
+    width: 45%;
+
+    &:last-of-type {
+      justify-content: flex-end;
+    }
 
     & > div:first-of-type {
       margin-right: 15px;

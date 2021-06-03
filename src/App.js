@@ -13,18 +13,14 @@ function App() {
   const [currentWeather, setCurrentWeather] = useState({});
   const [iconUrl, setIconUrl] = useState('');
   const [coords, setCoords] = useState({});
-  console.log('coords', coords);
 
   const url = 
-  `https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lon}&units=metric&appid=284cc29c8886800aa3961c2c7c1899de`;
+  `https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lon}&units=metric&APPID=284cc29c8886800aa3961c2c7c1899de`;
   
   useEffect(() => {
-    console.log(navigator.geolocation);
-
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
-        console.log(position.coords.latitude, position.coords.longitude);
-        setCoords({ lat: position.coords.latitude, lon: position.coords.longitude});
+        setCoords({ lon: position.coords.longitude, lat: position.coords.latitude });
       });
     }
   }, []);
@@ -33,16 +29,14 @@ function App() {
     const getCurrentLocationWeather = async () => {
       try {
         const res = await superagent.get(url);
-        console.log('OWM response', res.body);
         
-        const { main, name, sys, weather } = res.body;
-        const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather[0]["icon"]}.svg`;
+        const { main, name, sys, weather, coord } = res.body;
+        const icon = `http://openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png`;
         setIconUrl(icon);
-        console.log(res.body);
   
-        setCurrentWeather({ main, name, sys, weather });
+        setCurrentWeather({ main, name, sys, weather, coord });
       } catch (err) {
-        console.log('err', err);
+        
       }
     };
    

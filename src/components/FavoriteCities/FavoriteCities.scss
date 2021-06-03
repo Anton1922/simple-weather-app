@@ -1,0 +1,18 @@
+.favorite-cities {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 90vw;
+}
+
+.Polaris-Card:nth-of-type(2) {
+  margin: 25px auto;
+  padding: 20px;
+  width: 90vw;
+
+  & .Polaris-Heading {
+    margin-bottom: 20px;
+    font-size: 2.8rem;
+    text-align: center;
+  }
+}
